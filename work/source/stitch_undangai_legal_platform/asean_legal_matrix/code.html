@@ -1,0 +1,409 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>UndangAI | ASEAN Cross-Border Matrix</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#5d4201",
+                    "outline-variant": "#c6c6cd",
+                    "inverse-on-surface": "#eff1f3",
+                    "secondary-container": "#d0e1fb",
+                    "on-surface-variant": "#45464d",
+                    "surface-dim": "#d8dadc",
+                    "tertiary-fixed-dim": "#e9c176",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#eceef0",
+                    "inverse-surface": "#2d3133",
+                    "tertiary-container": "#261900",
+                    "on-background": "#191c1e",
+                    "secondary": "#505f76",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#76777d",
+                    "on-surface": "#191c1e",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#565e74",
+                    "primary-container": "#131b2e",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#7c839b",
+                    "primary-fixed": "#dae2fd",
+                    "surface-bright": "#f7f9fb",
+                    "error": "#ba1a1a",
+                    "primary": "#000000",
+                    "on-tertiary-fixed": "#261900",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-tertiary-container": "#a17f3b",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "inverse-primary": "#bec6e0",
+                    "secondary-fixed": "#d3e4fe",
+                    "on-secondary-fixed": "#0b1c30",
+                    "surface-container-high": "#e6e8ea",
+                    "on-secondary-container": "#54647a",
+                    "surface-variant": "#e0e3e5",
+                    "tertiary-fixed": "#ffdea5",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#000000",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f7f9fb",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface": "#f7f9fb",
+                    "on-primary-fixed": "#131b2e",
+                    "primary-fixed-dim": "#bec6e0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "xxl": "64px",
+                    "container-max": "1280px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "unit": "4px",
+                    "xl": "40px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Source Serif 4"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Source Serif 4"],
+                    "headline-md": ["Source Serif 4"],
+                    "label-sm": ["Inter"],
+                    "headline-lg-mobile": ["Source Serif 4"],
+                    "body-lg": ["Inter"],
+                    "headline-xl": ["Source Serif 4"],
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .comparison-pane {
+            scrollbar-width: thin;
+            scrollbar-color: #c6c6cd transparent;
+        }
+        .comparison-pane::-webkit-scrollbar {
+            width: 4px;
+        }
+        .comparison-pane::-webkit-scrollbar-thumb {
+            background-color: #c6c6cd;
+            border-radius: 2px;
+        }
+        .sticky-col {
+            position: sticky;
+            left: 0;
+            z-index: 20;
+        }
+        .tonal-layer-1 {
+            background-color: #FFFFFF;
+            border: 1px solid rgba(15, 23, 42, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-20 md:pb-0 md:pt-16">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface dark:bg-inverse-surface border-b border-outline-variant/10 shadow-sm dark:shadow-none h-16">
+<div class="flex justify-between items-center w-full px-gutter h-full max-w-container-max mx-auto">
+<div class="flex items-center gap-3 cursor-pointer active:opacity-80 transition-all" onclick="window.location.href='{{DATA:SCREEN:SCREEN_6}}'">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" style="font-size: 24px;">gavel</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">UndangAI</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8 items-center h-full">
+<a class="font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-colors px-3 py-2 rounded-lg" href="#">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-colors px-3 py-2 rounded-lg" href="#">Templates</a>
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed font-semibold px-3 py-2 bg-secondary-container/30 rounded-lg" href="#">Matrix</a>
+</nav>
+<div class="cursor-pointer active:opacity-80 transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-container-max mx-auto px-4 md:px-gutter py-xl">
+<!-- Header Section -->
+<section class="mb-xl flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">ASEAN Cross-Border Matrix</h2>
+<p class="text-on-surface-variant max-w-2xl font-body-md">Advanced side-by-side legal comparison tool for cross-border regulatory compliance and trade agreement analysis within the ASEAN region.</p>
+</div>
+<div class="flex gap-sm">
+<button class="bg-primary-container text-on-primary-container font-label-md text-label-md px-md py-3 rounded-lg flex items-center gap-2 hover:bg-primary-container/90 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+                    Export PDF
+                </button>
+</div>
+</section>
+<!-- Jurisdiction Selector -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-lg mb-xl">
+<div class="md:col-span-8 tonal-layer-1 p-lg rounded-xl flex flex-col md:flex-row items-center gap-lg">
+<div class="w-full md:w-1/2">
+<label class="block text-label-sm font-label-sm text-outline mb-2">Jurisdiction A</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-md py-3 appearance-none focus:border-primary focus:ring-0 transition-all font-body-md">
+<option selected="">Malaysia</option>
+<option>Singapore</option>
+<option>Thailand</option>
+<option>Vietnam</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+</div>
+<div class="hidden md:flex flex-shrink-0 items-center justify-center w-10 h-10 rounded-full bg-surface-container-highest">
+<span class="material-symbols-outlined text-primary">compare_arrows</span>
+</div>
+<div class="w-full md:w-1/2">
+<label class="block text-label-sm font-label-sm text-outline mb-2">Jurisdiction B</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-md py-3 appearance-none focus:border-primary focus:ring-0 transition-all font-body-md">
+<option>Malaysia</option>
+<option selected="">Singapore</option>
+<option>Thailand</option>
+<option>Vietnam</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 tonal-layer-1 p-lg rounded-xl">
+<label class="block text-label-sm font-label-sm text-outline mb-4">Quick Comparison Filters</label>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-secondary-container/20 text-primary border border-primary/10 rounded-full text-label-sm font-label-sm cursor-pointer hover:bg-secondary-container/40 transition-colors">Taxation</span>
+<span class="px-3 py-1.5 bg-secondary-container/20 text-primary border border-primary/10 rounded-full text-label-sm font-label-sm cursor-pointer hover:bg-secondary-container/40 transition-colors">Labor Laws</span>
+<span class="px-3 py-1.5 bg-secondary-container/20 text-primary border border-primary/10 rounded-full text-label-sm font-label-sm cursor-pointer hover:bg-secondary-container/40 transition-colors">IP Rights</span>
+<span class="px-3 py-1.5 bg-primary text-on-primary rounded-full text-label-sm font-label-sm cursor-pointer">All Topics</span>
+</div>
+</div>
+</section>
+<!-- Matrix Layout -->
+<section class="tonal-layer-1 rounded-xl overflow-hidden shadow-sm">
+<!-- Table Header -->
+<div class="grid grid-cols-12 border-b border-outline-variant/10 bg-surface-container-low">
+<div class="col-span-4 md:col-span-3 p-md md:p-lg border-r border-outline-variant/10 font-label-md text-label-md text-outline uppercase tracking-wider">Comparison Topic</div>
+<div class="col-span-4 md:col-span-4.5 p-md md:p-lg border-r border-outline-variant/10">
+<div class="flex items-center gap-3">
+<div class="w-8 h-6 bg-blue-800 rounded-sm overflow-hidden flex items-center justify-center">
+<div class="w-full h-full bg-cover" data-alt="A macro photo of the Malaysian flag waving slightly, with deep blue, red, and white colors, symbolizing national identity and legal jurisdiction in Southeast Asia." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5GRMwd7Wy_bYx2wht725OTHzm0FhRHMDHFK08IKJFe4t7BXIm62-F37TNO_0v6BBgJBegiiiUUfg4XeFoQuTEYbQ3i8G9WWZkaY_NasVmSPr2x6qsTtieNFT80FkVFfqICMxuyLu0ACQvlv3b19DPbSWLuaZyjnFbEEDELq8OhY7gvtMm5UTZ5GcHLLlTR4FD_UEafXoaTolvqoBzvNqUgDticQP4eGDCkBhEwhuAzlR3Kpdae6iH')"></div>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary">Malaysia</span>
+</div>
+</div>
+<div class="col-span-4 md:col-span-4.5 p-md md:p-lg">
+<div class="flex items-center gap-3">
+<div class="w-8 h-6 bg-red-600 rounded-sm overflow-hidden flex items-center justify-center">
+<div class="w-full h-full bg-cover" data-alt="A macro photo of the Singaporean flag with its distinct crescent and stars, captured in high detail against a bright white morning sky, representing governance and legal clarity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB79HCzeuKLJVWnVH4hcSYKmSR9t-XT19T-5Gq3XuDxXTMv1IImZyDMGuak7m0auSHQ8LTCzVPHcFXGDJsPSgkdlbKkgKywTN1wjpqoGQgWuxe15sEgtgDO0AhWNe0BQ6fhjNIkyW6QlxwUB-GwaH1GS-kK2YkxqVdI6AgG9wZJ8g2J44fAPdxlKhsKpeYHFPinB43qbHnK5lBmwp8ZWY8VGJklXC9yJgBZlRsqnRokSdxvT17SM_vZ')"></div>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary">Singapore</span>
+</div>
+</div>
+</div>
+<!-- Matrix Rows -->
+<div class="divide-y divide-outline-variant/10">
+<!-- Topic: Foreign Ownership Limits -->
+<div class="grid grid-cols-12 group transition-colors hover:bg-surface-container-lowest">
+<div class="col-span-12 md:col-span-3 p-md md:p-lg border-r-0 md:border-r border-outline-variant/10 bg-surface-container-lowest md:bg-transparent">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-secondary text-[20px]">account_balance</span>
+<h4 class="font-label-md text-label-md text-primary">Foreign Ownership Limits</h4>
+</div>
+<p class="text-label-sm font-label-sm text-outline">Equity restrictions &amp; industry caps</p>
+</div>
+<!-- Malaysia Column -->
+<div class="col-span-6 md:col-span-4.5 p-md md:p-lg border-r border-outline-variant/10 border-t md:border-t-0">
+<div class="prose prose-sm font-body-md text-on-surface-variant">
+<p class="mb-3">Generally liberalized for most sectors. Significant restrictions remain in <strong>distributive trade</strong> and <strong>oil &amp; gas</strong>.</p>
+<div class="bg-secondary-container/10 p-3 rounded-lg border border-secondary-container/20">
+<span class="block text-label-sm font-label-sm text-primary mb-1">Key Cite:</span>
+<p class="text-[13px] italic">FDI Policy 2021, MITI Guidelines.</p>
+</div>
+</div>
+</div>
+<!-- Singapore Column -->
+<div class="col-span-6 md:col-span-4.5 p-md md:p-lg border-t md:border-t-0">
+<div class="prose prose-sm font-body-md text-on-surface-variant">
+<p class="mb-3">Virtually no restrictions on foreign ownership. 100% equity permitted across almost all sectors including financial services.</p>
+<div class="bg-secondary-container/10 p-3 rounded-lg border border-secondary-container/20">
+<span class="block text-label-sm font-label-sm text-primary mb-1">Key Cite:</span>
+<p class="text-[13px] italic">Companies Act (Cap. 50), MTI Trade Policy.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Topic: Arbitration Enforcement -->
+<div class="grid grid-cols-12 group transition-colors hover:bg-surface-container-lowest">
+<div class="col-span-12 md:col-span-3 p-md md:p-lg border-r-0 md:border-r border-outline-variant/10 bg-surface-container-lowest md:bg-transparent">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-secondary text-[20px]">gavel</span>
+<h4 class="font-label-md text-label-md text-primary">Arbitration Enforcement</h4>
+</div>
+<p class="text-label-sm font-label-sm text-outline">New York Convention status</p>
+</div>
+<!-- Malaysia Column -->
+<div class="col-span-6 md:col-span-4.5 p-md md:p-lg border-r border-outline-variant/10 border-t md:border-t-0">
+<div class="prose prose-sm font-body-md text-on-surface-variant">
+<p class="mb-3">Signatory to NY Convention. AIAC (Kuala Lumpur) is the primary hub. Court intervention is generally minimal but exists for public policy grounds.</p>
+<div class="bg-secondary-container/10 p-3 rounded-lg border border-secondary-container/20">
+<span class="block text-label-sm font-label-sm text-primary mb-1">Key Cite:</span>
+<p class="text-[13px] italic">Arbitration Act 2005 (Act 646).</p>
+</div>
+</div>
+</div>
+<!-- Singapore Column -->
+<div class="col-span-6 md:col-span-4.5 p-md md:p-lg border-t md:border-t-0">
+<div class="prose prose-sm font-body-md text-on-surface-variant">
+<p class="mb-3">Global leader via SIAC. Extremely pro-arbitration courts. Signatory to NY Convention with high enforcement track record.</p>
+<div class="bg-secondary-container/10 p-3 rounded-lg border border-secondary-container/20">
+<span class="block text-label-sm font-label-sm text-primary mb-1">Key Cite:</span>
+<p class="text-[13px] italic">International Arbitration Act (IAA).</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Topic: Shared Treaties -->
+<div class="grid grid-cols-12 group transition-colors hover:bg-surface-container-lowest bg-surface-container-lowest/50">
+<div class="col-span-12 md:col-span-3 p-md md:p-lg border-r-0 md:border-r border-outline-variant/10">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px]">handshake</span>
+<h4 class="font-label-md text-label-md text-primary">Shared Treaties</h4>
+</div>
+<p class="text-label-sm font-label-sm text-outline">Multilateral agreements</p>
+</div>
+<div class="col-span-12 md:col-span-9 p-md md:p-lg border-t md:border-t-0">
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center gap-2 px-4 py-2 bg-white border border-outline-variant/20 rounded-lg shadow-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span class="font-label-md text-label-md text-primary">RCEP (Regional Comprehensive Economic Partnership)</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-white border border-outline-variant/20 rounded-lg shadow-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span class="font-label-md text-label-md text-primary">CPTPP</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-white border border-outline-variant/20 rounded-lg shadow-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span class="font-label-md text-label-md text-primary">ASEAN Trade in Goods Agreement (ATIGA)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Insights Bento Grid -->
+<section class="mt-xxl grid grid-cols-1 md:grid-cols-3 gap-lg">
+<div class="tonal-layer-1 p-lg rounded-xl md:col-span-2">
+<div class="flex items-center justify-between mb-lg">
+<h3 class="font-headline-sm text-headline-sm text-primary">Regional Compliance Risk Heatmap</h3>
+<span class="text-label-sm font-label-sm text-outline">Updated: 2 Hours Ago</span>
+</div>
+<div class="relative h-64 bg-surface-container rounded-lg overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A stylized 3D map of the Southeast Asian ASEAN region with Malaysia and Singapore highlighted in a sophisticated midnight navy and gold color scheme. Soft ambient lighting and subtle data-visualization nodes float above the map, representing legal connectivity and regulatory intensity in a light-mode architectural style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqkRdUz_P8l0I61555svfFKuwrCI0vnvI3CE-osf58SVrL18OnHpRhenyiW9EBg-ALDCZZHxK0FQhY-vo_x_jSwpM8quPmvRMUAn5Baa52iBrcLm9cCsiixf0vB7K-FV7j-08ccFjWqJr30sVl8mZn4VbSaWNZEKio4cv3tOeUSF_h6QvjpPRc09B7RaCJrYXxnzxJwFf5KRrwCFExnnYwMPugyU1Jg0N4qR4TpfkyfMEooH5-kr9X')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+<div class="bg-white/90 backdrop-blur-md p-3 rounded-lg shadow-lg">
+<span class="block text-label-sm font-label-sm text-outline">Risk Level: Low</span>
+<span class="font-bold text-primary">MY-SG Corridor</span>
+</div>
+<div class="flex gap-2">
+<div class="w-12 h-1 bg-white/30 rounded-full overflow-hidden">
+<div class="h-full bg-white w-2/3"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tonal-layer-1 p-lg rounded-xl flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 bg-secondary-container/30 rounded-full flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Source Documentation</h3>
+<p class="text-on-surface-variant font-body-sm mb-lg">Access the full library of verified legislative acts for both Malaysia and Singapore used in this matrix.</p>
+</div>
+<ul class="space-y-3">
+<li class="flex items-center justify-between p-2 hover:bg-surface-container rounded-lg transition-colors cursor-pointer">
+<span class="font-label-md text-label-md">MY Arbitration Act</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</li>
+<li class="flex items-center justify-between p-2 hover:bg-surface-container rounded-lg transition-colors cursor-pointer">
+<span class="font-label-md text-label-md">SG Companies Act</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</li>
+<li class="flex items-center justify-between p-2 hover:bg-surface-container rounded-lg transition-colors cursor-pointer border-t border-outline-variant/10 pt-3 mt-3">
+<span class="font-label-md text-label-md text-on-tertiary-container">Download Data Set (CSV)</span>
+<span class="material-symbols-outlined text-on-tertiary-container text-[18px]">download</span>
+</li>
+</ul>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface dark:bg-inverse-surface border-t border-outline-variant/10 shadow-lg dark:shadow-none flex justify-around items-center h-20 px-4 pb-safe"><div onclick="window.location.href='{{DATA:SCREEN:SCREEN_6}}'" class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors active:scale-95 duration-200 cursor-pointer"><span class="material-symbols-outlined">dashboard</span><span class="font-label-sm text-label-sm mt-1">Home</span></div><div onclick="window.location.href='{{DATA:SCREEN:SCREEN_5}}'" class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors active:scale-95 duration-200 cursor-pointer"><span class="material-symbols-outlined">description</span><span class="font-label-sm text-label-sm mt-1">Templates</span></div><div onclick="window.location.href='{{DATA:SCREEN:SCREEN_4}}'" class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors active:scale-95 duration-200 cursor-pointer"><span class="material-symbols-outlined">search</span><span class="font-label-sm text-label-sm mt-1">Search</span></div><div onclick="window.location.href='{{DATA:SCREEN:SCREEN_2}}'" class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed bg-secondary-container/30 dark:bg-primary-container rounded-xl px-3 py-1 active:scale-95 transition-transform duration-200 cursor-pointer"><span class="material-symbols-outlined">compare_arrows</span><span class="font-label-sm text-label-sm mt-1">Matrix</span></div><div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors active:scale-95 duration-200 cursor-pointer"><span class="material-symbols-outlined">account_circle</span><span class="font-label-sm text-label-sm mt-1">Profile</span></div></nav>
+<!-- FAB (Only on Matrix main screen) -->
+<button class="fixed bottom-24 right-6 md:bottom-10 md:right-10 w-14 h-14 bg-primary text-on-primary rounded-full shadow-xl flex items-center justify-center hover:scale-105 active:scale-95 transition-transform z-40">
+<span class="material-symbols-outlined" style="font-size: 28px;">add</span>
+</button>
+<script>
+        // Simple interactivity for jurisdiction selection simulation
+        document.querySelectorAll('select').forEach(select => {
+            select.addEventListener('change', function() {
+                // Visual feedback only for demo
+                const container = this.closest('section').nextElementSibling;
+                container.style.opacity = '0.5';
+                setTimeout(() => {
+                    container.style.opacity = '1';
+                }, 300);
+            });
+        });
+
+        // Sticky header transition on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+
+
+</body></html>

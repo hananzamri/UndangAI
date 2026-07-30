@@ -1,0 +1,400 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>UndangAI | Smart Templates</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#5d4201",
+                    "outline-variant": "#c6c6cd",
+                    "inverse-on-surface": "#eff1f3",
+                    "secondary-container": "#d0e1fb",
+                    "on-surface-variant": "#45464d",
+                    "surface-dim": "#d8dadc",
+                    "tertiary-fixed-dim": "#e9c176",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#eceef0",
+                    "inverse-surface": "#2d3133",
+                    "tertiary-container": "#261900",
+                    "on-background": "#191c1e",
+                    "secondary": "#505f76",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#76777d",
+                    "on-surface": "#191c1e",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#565e74",
+                    "primary-container": "#131b2e",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#7c839b",
+                    "primary-fixed": "#dae2fd",
+                    "surface-bright": "#f7f9fb",
+                    "error": "#ba1a1a",
+                    "primary": "#000000",
+                    "on-tertiary-fixed": "#261900",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-tertiary-container": "#a17f3b",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "inverse-primary": "#bec6e0",
+                    "secondary-fixed": "#d3e4fe",
+                    "on-secondary-fixed": "#0b1c30",
+                    "surface-container-high": "#e6e8ea",
+                    "on-secondary-container": "#54647a",
+                    "surface-variant": "#e0e3e5",
+                    "tertiary-fixed": "#ffdea5",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#000000",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f7f9fb",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface": "#f7f9fb",
+                    "on-primary-fixed": "#131b2e",
+                    "primary-fixed-dim": "#bec6e0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "xxl": "64px",
+                    "container-max": "1280px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "unit": "4px",
+                    "xl": "40px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["\"Source Serif 4\""],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["\"Source Serif 4\""],
+                    "headline-md": ["\"Source Serif 4\""],
+                    "label-sm": ["Inter"],
+                    "headline-lg-mobile": ["\"Source Serif 4\""],
+                    "body-lg": ["Inter"],
+                    "headline-xl": ["\"Source Serif 4\""],
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #f7f9fb;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(118, 119, 125, 0.1);
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c6c6cd;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-surface border-b border-outline-variant/10 shadow-sm">
+<div class="flex justify-between items-center w-full px-gutter h-16 max-w-container-max mx-auto">
+<div class="flex items-center gap-3 cursor-pointer active:opacity-80 transition-all" onclick="window.location.href='{{DATA:SCREEN:SCREEN_6}}'">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">gavel</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">UndangAI</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex gap-6"><a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="{{DATA:SCREEN:SCREEN_6}}">Dashboard</a><a class="font-label-md text-primary font-bold" href="{{DATA:SCREEN:SCREEN_5}}">Templates</a><a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="{{DATA:SCREEN:SCREEN_4}}">Search</a><a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="{{DATA:SCREEN:SCREEN_2}}">Matrix</a></nav>
+<div class="h-6 w-px bg-outline-variant/30"></div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:bg-surface-container rounded-full p-2 transition-colors">notifications</span>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold text-xs border border-outline-variant/20">AR</div>
+</div>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-on-surface-variant">menu</span>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-gutter py-xl pb-32">
+<!-- Hero Section -->
+<div class="mb-xl">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-2">Smart Templates</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">Streamline your legal drafting with our library of automated Malaysian legal templates, optimized for the Rules of Court and latest 2026 guidelines.</p>
+</div>
+<!-- Search and Filter Bar -->
+<div class="sticky top-20 z-40 mb-lg space-y-4">
+<div class="glass-card rounded-xl p-2 flex flex-col md:flex-row gap-2 shadow-sm border border-outline-variant/20">
+<div class="flex-1 flex items-center px-4 bg-surface-container-lowest rounded-lg border border-outline-variant/30 focus-within:border-primary transition-all">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 py-3 px-3 font-body-md placeholder:text-outline-variant" placeholder="Search for templates (e.g. Writ of Summons, SPA...)" type="text">
+</div>
+<div class="flex gap-2 p-1 overflow-x-auto whitespace-nowrap scrollbar-hide">
+<button class="px-6 py-2 rounded-lg bg-primary text-on-primary font-label-md transition-all active:scale-95">All</button>
+<button class="px-6 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md transition-all active:scale-95">Litigation</button>
+<button class="px-6 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md transition-all active:scale-95">Corporate</button>
+<button class="px-6 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md transition-all active:scale-95">Conveyancing</button>
+<button class="px-6 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md transition-all active:scale-95">Employment</button>
+</div>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Template Card 1 -->
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-lg hover:shadow-lg transition-all flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-secondary-container/50 text-on-secondary-container text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Litigation</span>
+<div class="flex items-center gap-1.5 bg-green-50 text-green-700 px-2 py-1 rounded-full border border-green-100">
+<span class="w-1.5 h-1.5 rounded-full bg-green-600"></span>
+<span class="text-[11px] font-semibold">Up-to-date (2026)</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-on-secondary-fixed-variant transition-colors">Writ of Summons</h3>
+<p class="font-body-sm text-on-surface-variant mb-6 line-clamp-2">A foundational document used to initiate civil proceedings in Malaysian Courts. Includes standard endorsements.</p>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="flex flex-col">
+<span class="text-[10px] text-outline uppercase font-bold">Format</span>
+<span class="text-xs font-semibold text-on-surface">DOCX, PDF</span>
+</div>
+<div class="h-6 w-px bg-outline-variant/30"></div>
+<div class="flex flex-col">
+<span class="text-[10px] text-outline uppercase font-bold">Pages</span>
+<span class="text-xs font-semibold text-on-surface">4-8 pp.</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-on-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Template Card 2 -->
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-lg hover:shadow-lg transition-all flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-secondary-container/50 text-on-secondary-container text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Litigation</span>
+<div class="flex items-center gap-1.5 bg-green-50 text-green-700 px-2 py-1 rounded-full border border-green-100">
+<span class="w-1.5 h-1.5 rounded-full bg-green-600"></span>
+<span class="text-[11px] font-semibold">Up-to-date (2026)</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-on-secondary-fixed-variant transition-colors">Statement of Claim</h3>
+<p class="font-body-sm text-on-surface-variant mb-6 line-clamp-2">Detailed pleading articulating the facts and legal grounds supporting the plaintiff's claim.</p>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="flex flex-col">
+<span class="text-[10px] text-outline uppercase font-bold">Format</span>
+<span class="text-xs font-semibold text-on-surface">DOCX</span>
+</div>
+<div class="h-6 w-px bg-outline-variant/30"></div>
+<div class="flex flex-col">
+<span class="text-[10px] text-outline uppercase font-bold">Pages</span>
+<span class="text-xs font-semibold text-on-surface">Auto-scale</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-on-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Template Card 3 -->
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-lg hover:shadow-lg transition-all flex flex-col justify-between border-t-2 border-t-tertiary-fixed-dim">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-tertiary-fixed/30 text-on-tertiary-fixed-variant text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Corporate</span>
+<div class="flex items-center gap-1.5 bg-green-50 text-green-700 px-2 py-1 rounded-full border border-green-100">
+<span class="w-1.5 h-1.5 rounded-full bg-green-600"></span>
+<span class="text-[11px] font-semibold">Up-to-date (2026)</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-on-secondary-fixed-variant transition-colors">Board Resolution (COA 2016)</h3>
+<p class="font-body-sm text-on-surface-variant mb-6 line-clamp-2">Standard directors' circular resolution compliant with the Companies Act 2016 requirements.</p>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="flex flex-col">
+<span class="text-[10px] text-outline uppercase font-bold">Format</span>
+<span class="text-xs font-semibold text-on-surface">DOCX, PDF</span>
+</div>
+<div class="h-6 w-px bg-outline-variant/30"></div>
+<div class="flex flex-col">
+<span class="text-[10px] text-outline uppercase font-bold">Pages</span>
+<span class="text-xs font-semibold text-on-surface">2 pp.</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-on-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Template Card 4 -->
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-lg hover:shadow-lg transition-all flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-secondary-container/50 text-on-secondary-container text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Conveyancing</span>
+<div class="flex items-center gap-1.5 bg-green-50 text-green-700 px-2 py-1 rounded-full border border-green-100">
+<span class="w-1.5 h-1.5 rounded-full bg-green-600"></span>
+<span class="text-[11px] font-semibold">Up-to-date (2026)</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-on-secondary-fixed-variant transition-colors">SPA (Schedule G)</h3>
+<p class="font-body-sm text-on-surface-variant mb-6 line-clamp-2">Sale and Purchase Agreement for landed property under the Housing Development (Control &amp; Licensing) Act.</p>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="flex flex-col">
+<span class="text-[10px] text-outline uppercase font-bold">Format</span>
+<span class="text-xs font-semibold text-on-surface">DOCX, PDF</span>
+</div>
+<div class="h-6 w-px bg-outline-variant/30"></div>
+<div class="flex flex-col">
+<span class="text-[10px] text-outline uppercase font-bold">Pages</span>
+<span class="text-xs font-semibold text-on-surface">15+ pp.</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-on-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Template Card 5 -->
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-lg hover:shadow-lg transition-all flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-secondary-container/50 text-on-secondary-container text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">Employment</span>
+<div class="flex items-center gap-1.5 bg-surface-container text-on-surface-variant px-2 py-1 rounded-full border border-outline-variant/20">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span class="text-[11px] font-semibold">Review Pending</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2 group-hover:text-on-secondary-fixed-variant transition-colors">Employment Agreement</h3>
+<p class="font-body-sm text-on-surface-variant mb-6 line-clamp-2">Executive-level employment contract featuring comprehensive confidentiality and non-compete clauses.</p>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="flex flex-col">
+<span class="text-[10px] text-outline uppercase font-bold">Format</span>
+<span class="text-xs font-semibold text-on-surface">DOCX</span>
+</div>
+<div class="h-6 w-px bg-outline-variant/30"></div>
+<div class="flex flex-col">
+<span class="text-[10px] text-outline uppercase font-bold">Pages</span>
+<span class="text-xs font-semibold text-on-surface">12 pp.</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-on-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CTA Card / Bento Style -->
+<div class="relative group bg-primary-container overflow-hidden rounded-xl p-lg flex flex-col justify-center text-on-primary shadow-xl">
+<div class="absolute top-0 right-0 p-6 opacity-20 transform translate-x-1/4 -translate-y-1/4">
+<span class="material-symbols-outlined text-[120px]">description</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline-sm text-headline-sm mb-3">Custom AI Draft</h3>
+<p class="font-body-sm text-on-primary-container mb-6 opacity-80">Can't find what you need? Use our proprietary LLM to generate a custom template based on your specific case requirements.</p>
+<button class="bg-tertiary-fixed text-on-tertiary-fixed px-6 py-2.5 rounded font-label-md hover:bg-tertiary-fixed-dim transition-colors active:scale-95">Generate Custom Draft</button>
+</div>
+</div>
+</div>
+<!-- Featured Collections Section -->
+<section class="mt-xxl">
+<h2 class="font-headline-md text-headline-md text-primary mb-lg">Regulatory Collections</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="glass-card p-xl rounded-full border border-outline-variant/20 flex gap-gutter items-center">
+<div class="w-20 h-20 shrink-0 bg-primary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-3xl">account_balance</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-1">Civil Procedure 2026</h4>
+<p class="font-body-sm text-on-surface-variant mb-3">Complete set of forms revised for the latest judicial digital transformation mandate.</p>
+<a class="text-primary font-label-md flex items-center gap-1 hover:underline" href="#">View 24 templates <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+</div>
+</div>
+<div class="glass-card p-xl rounded-full border border-outline-variant/20 flex gap-gutter items-center">
+<div class="w-20 h-20 shrink-0 bg-secondary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl">business_center</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-1">M&amp;A Toolkit</h4>
+<p class="font-body-sm text-on-surface-variant mb-3">Due diligence checklists and share purchase agreements for private limited companies.</p>
+<a class="text-primary font-label-md flex items-center gap-1 hover:underline" href="#">View 18 templates <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Shell Support (BottomNavBar for Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe bg-surface border-t border-outline-variant/10 shadow-lg md:hidden"><div onclick="window.location.href='{{DATA:SCREEN:SCREEN_6}}'" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 cursor-pointer"><span class="material-symbols-outlined">dashboard</span><span class="font-label-sm text-label-sm">Home</span></div><div onclick="window.location.href='{{DATA:SCREEN:SCREEN_5}}'" class="flex flex-col items-center justify-center text-primary bg-secondary-container/30 rounded-xl px-3 py-1 cursor-pointer"><span class="material-symbols-outlined">description</span><span class="font-label-sm text-label-sm">Templates</span></div><div onclick="window.location.href='{{DATA:SCREEN:SCREEN_4}}'" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 cursor-pointer"><span class="material-symbols-outlined">search</span><span class="font-label-sm text-label-sm">Search</span></div><div onclick="window.location.href='{{DATA:SCREEN:SCREEN_2}}'" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 cursor-pointer"><span class="material-symbols-outlined">compare_arrows</span><span class="font-label-sm text-label-sm">Matrix</span></div><div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 cursor-pointer"><span class="material-symbols-outlined">account_circle</span><span class="font-label-sm text-label-sm">Profile</span></div></nav>
+<!-- Floating Action Button Contextual (Only for relevant desktop view) -->
+<button class="hidden md:flex fixed bottom-8 right-8 bg-primary text-on-primary w-14 h-14 rounded-full items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all z-40 group">
+<span class="material-symbols-outlined">add</span>
+<span class="absolute right-full mr-4 bg-primary text-on-primary px-3 py-1.5 rounded-lg text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-md">Create Custom Document</span>
+</button>
+<script>
+        // Simple search interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('shadow-md');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('shadow-md');
+        });
+
+        // Category filter interaction
+        const filterButtons = document.querySelectorAll('button[class*="px-6 py-2 rounded-lg"]');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-on-primary');
+                    b.classList.add('bg-surface-container', 'text-on-surface-variant');
+                });
+                btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+                btn.classList.add('bg-primary', 'text-on-primary');
+            });
+        });
+    </script>
+
+
+</body></html>

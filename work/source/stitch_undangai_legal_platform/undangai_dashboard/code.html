@@ -1,0 +1,275 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>UndangAI | Professional Legal Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#5d4201",
+                    "outline-variant": "#c6c6cd",
+                    "inverse-on-surface": "#eff1f3",
+                    "secondary-container": "#d0e1fb",
+                    "on-surface-variant": "#45464d",
+                    "surface-dim": "#d8dadc",
+                    "tertiary-fixed-dim": "#e9c176",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#eceef0",
+                    "inverse-surface": "#2d3133",
+                    "tertiary-container": "#261900",
+                    "on-background": "#191c1e",
+                    "secondary": "#505f76",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#76777d",
+                    "on-surface": "#191c1e",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#565e74",
+                    "primary-container": "#131b2e",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#7c839b",
+                    "primary-fixed": "#dae2fd",
+                    "surface-bright": "#f7f9fb",
+                    "error": "#ba1a1a",
+                    "primary": "#000000",
+                    "on-tertiary-fixed": "#261900",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-tertiary-container": "#a17f3b",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "inverse-primary": "#bec6e0",
+                    "secondary-fixed": "#d3e4fe",
+                    "on-secondary-fixed": "#0b1c30",
+                    "surface-container-high": "#e6e8ea",
+                    "on-secondary-container": "#54647a",
+                    "surface-variant": "#e0e3e5",
+                    "tertiary-fixed": "#ffdea5",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#000000",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f7f9fb",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface": "#f7f9fb",
+                    "on-primary-fixed": "#131b2e",
+                    "primary-fixed-dim": "#bec6e0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "xxl": "64px",
+                    "container-max": "1280px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "unit": "4px",
+                    "xl": "40px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Source Serif 4"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Source Serif 4"],
+                    "headline-md": ["Source Serif 4"],
+                    "label-sm": ["Inter"],
+                    "headline-lg-mobile": ["Source Serif 4"],
+                    "body-lg": ["Inter"],
+                    "headline-xl": ["Source Serif 4"],
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-shadow { box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-24">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-40 bg-surface border-b border-outline-variant/10 shadow-sm flex justify-between items-center w-full px-gutter h-16 max-w-container-max mx-auto">
+<div class="flex items-center gap-3 cursor-pointer active:opacity-80 transition-all">
+<span class="material-symbols-outlined text-primary text-2xl">gavel</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">UndangAI</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative cursor-pointer active:opacity-80 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-4 py-8 space-y-8">
+<!-- Welcome Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Selamat pagi, Ahmad Razak</h2>
+<p class="text-on-surface-variant font-body-md">Senior Associate • Malaysian Bar #12345</p>
+</div>
+<!-- Regulatory Alert Badge -->
+<div class="inline-flex items-center gap-2 bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1.5 rounded-full border border-on-tertiary-container/20">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">campaign</span>
+<span class="font-label-sm text-label-sm">New Federal Gazette Update</span>
+</div>
+</section>
+<!-- Quick Stats Bento -->
+<section class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest border border-outline-variant/10 rounded-xl p-5 card-shadow flex flex-col justify-between h-32">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Documents Drafted</span>
+<div class="flex items-end justify-between">
+<span class="font-headline-lg text-headline-lg text-primary">12</span>
+<span class="text-on-secondary-container font-label-sm">+3 this week</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/10 rounded-xl p-5 card-shadow flex flex-col justify-between h-32">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Research Queries</span>
+<div class="flex items-end justify-between">
+<span class="font-headline-lg text-headline-lg text-primary">08</span>
+<span class="text-on-secondary-container font-label-sm">Active Sessions</span>
+</div>
+</div>
+</section>
+<!-- Core Modules Grid -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-sm text-headline-sm text-primary">Core Modules</h3>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Smart Templates -->
+<a href="{{DATA:SCREEN:SCREEN_5}}" class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-5 card-shadow transition-all hover:bg-surface-container flex flex-col items-center text-center gap-3 cursor-pointer"><div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center text-primary"><span class="material-symbols-outlined text-2xl">description</span></div><span class="font-label-md text-label-md">Smart Templates</span></a>
+<!-- Legal Search -->
+<a href="{{DATA:SCREEN:SCREEN_4}}" class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-5 card-shadow transition-all hover:bg-surface-container flex flex-col items-center text-center gap-3 cursor-pointer"><div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center text-primary"><span class="material-symbols-outlined text-2xl">search</span></div><span class="font-label-md text-label-md">Legal Search</span></a>
+<!-- ASEAN Matrix -->
+<a href="{{DATA:SCREEN:SCREEN_2}}" class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-5 card-shadow transition-all hover:bg-surface-container flex flex-col items-center text-center gap-3 cursor-pointer"><div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center text-primary"><span class="material-symbols-outlined text-2xl">compare_arrows</span></div><span class="font-label-md text-label-md">ASEAN Matrix</span></a>
+<!-- Case Fact Analyzer -->
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-5 card-shadow transition-all hover:bg-surface-container flex flex-col items-center text-center gap-3 cursor-pointer">
+<div class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">fact_check</span>
+</div>
+<span class="font-label-md text-label-md">Case Fact Analyzer</span>
+</div>
+</div>
+</section>
+<!-- Document Preview / Promo Banner -->
+<section class="relative overflow-hidden rounded-xl bg-primary-container text-on-primary-fixed h-48 flex items-center p-8">
+<div class="relative z-10 space-y-2">
+<h4 class="font-headline-sm text-headline-sm text-white">Compare Legal Precedents</h4>
+<p class="font-body-sm text-on-primary-container max-w-xs">Instantly cross-reference Malaysian case law against Singapore and UK jurisdictions.</p>
+<button class="mt-4 bg-white text-primary px-4 py-2 rounded font-label-md text-label-md hover:bg-surface-container transition-colors">Start Comparison</button>
+</div>
+<div class="absolute right-[-20px] top-[-20px] opacity-10">
+<span class="material-symbols-outlined text-[160px]">gavel</span>
+</div>
+</section>
+<!-- Recent Activity List -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-sm text-headline-sm text-primary">Recent Activity</h3>
+<button class="text-on-secondary-fixed-variant font-label-sm text-label-sm">View All</button>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-4 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10 card-shadow cursor-pointer active:scale-[0.98] transition-transform">
+<div class="bg-secondary-container/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary">edit_document</span>
+</div>
+<div class="flex-1">
+<h5 class="font-label-md text-label-md text-primary">Statement of Claim (Contract Breach)</h5>
+<p class="text-on-surface-variant font-body-sm">Civil Suite No. WA-22NCC-100-2023</p>
+</div>
+<span class="font-label-sm text-label-sm text-outline">2h ago</span>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10 card-shadow cursor-pointer active:scale-[0.98] transition-transform">
+<div class="bg-secondary-container/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary">history_edu</span>
+</div>
+<div class="flex-1">
+<h5 class="font-label-md text-label-md text-primary">Affidavit in Support</h5>
+<p class="text-on-surface-variant font-body-sm">Interlocutory Application for Injunction</p>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Yesterday</span>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/10 card-shadow cursor-pointer active:scale-[0.98] transition-transform">
+<div class="bg-secondary-container/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary">manage_search</span>
+</div>
+<div class="flex-1">
+<h5 class="font-label-md text-label-md text-primary">Research Memo: Duty of Care</h5>
+<p class="text-on-surface-variant font-body-sm">Professional Negligence Precedents</p>
+</div>
+<span class="font-label-sm text-label-sm text-outline">2 days ago</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface border-t border-outline-variant/10 shadow-lg flex justify-around items-center h-20 px-4 pb-safe max-w-container-max mx-auto left-1/2 -translate-x-1/2">
+<a class="flex flex-col items-center justify-center text-primary bg-secondary-container/30 rounded-xl px-3 py-1 active:scale-95 transition-transform duration-200" href="{{DATA:SCREEN:SCREEN_6}}">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high transition-colors active:scale-95" href="{{DATA:SCREEN:SCREEN_5}}">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-sm text-label-sm">Templates</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high transition-colors active:scale-95" href="{{DATA:SCREEN:SCREEN_4}}">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high transition-colors active:scale-95" href="{{DATA:SCREEN:SCREEN_2}}">
+<span class="material-symbols-outlined">compare_arrows</span>
+<span class="font-label-sm text-label-sm">Matrix</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container-high transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for active states
+        const navItems = document.querySelectorAll('nav a');
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                navItems.forEach(i => {
+                    i.classList.remove('text-primary', 'bg-secondary-container/30');
+                    i.classList.add('text-on-surface-variant');
+                    const icon = i.querySelector('.material-symbols-outlined');
+                    if(icon) icon.style.fontVariationSettings = "'FILL' 0";
+                });
+                item.classList.add('text-primary', 'bg-secondary-container/30');
+                item.classList.remove('text-on-surface-variant');
+                const activeIcon = item.querySelector('.material-symbols-outlined');
+                if(activeIcon) activeIcon.style.fontVariationSettings = "'FILL' 1";
+            });
+        });
+    </script>
+
+
+</body></html>

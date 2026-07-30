@@ -1,0 +1,401 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>UndangAI | Intelligent Legal Search</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .legal-sheet {
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+            border: 1px solid rgba(198, 198, 205, 0.1);
+        }
+        .glass-effect {
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+        /* Custom scrollbar for professional feel */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f7f9fb; }
+        ::-webkit-scrollbar-thumb { background: #c6c6cd; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #76777d; }
+    </style>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#5d4201",
+                    "outline-variant": "#c6c6cd",
+                    "inverse-on-surface": "#eff1f3",
+                    "secondary-container": "#d0e1fb",
+                    "on-surface-variant": "#45464d",
+                    "surface-dim": "#d8dadc",
+                    "tertiary-fixed-dim": "#e9c176",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#eceef0",
+                    "inverse-surface": "#2d3133",
+                    "tertiary-container": "#261900",
+                    "on-background": "#191c1e",
+                    "secondary": "#505f76",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#76777d",
+                    "on-surface": "#191c1e",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#565e74",
+                    "primary-container": "#131b2e",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#7c839b",
+                    "primary-fixed": "#dae2fd",
+                    "surface-bright": "#f7f9fb",
+                    "error": "#ba1a1a",
+                    "primary": "#000000",
+                    "on-tertiary-fixed": "#261900",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-tertiary-container": "#a17f3b",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "inverse-primary": "#bec6e0",
+                    "secondary-fixed": "#d3e4fe",
+                    "on-secondary-fixed": "#0b1c30",
+                    "surface-container-high": "#e6e8ea",
+                    "on-secondary-container": "#54647a",
+                    "surface-variant": "#e0e3e5",
+                    "tertiary-fixed": "#ffdea5",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#000000",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f7f9fb",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface": "#f7f9fb",
+                    "on-primary-fixed": "#131b2e",
+                    "primary-fixed-dim": "#bec6e0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "xxl": "64px",
+                    "container-max": "1280px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "unit": "4px",
+                    "xl": "40px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["\"Source Serif 4\""],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["\"Source Serif 4\""],
+                    "headline-md": ["\"Source Serif 4\""],
+                    "label-sm": ["Inter"],
+                    "headline-lg-mobile": ["\"Source Serif 4\""],
+                    "body-lg": ["Inter"],
+                    "headline-xl": ["\"Source Serif 4\""],
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface border-b border-outline-variant/10 shadow-sm">
+<div class="flex justify-between items-center w-full px-gutter h-16 max-w-container-max mx-auto">
+<div class="flex items-center gap-md cursor-pointer active:opacity-80 transition-all" onclick="window.location.href='{{DATA:SCREEN:SCREEN_6}}'">
+<span class="material-symbols-outlined text-primary text-headline-md">gavel</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">UndangAI</h1>
+</div>
+<div class="hidden md:flex items-center gap-xl">
+<nav class="flex gap-lg">
+<a class="font-label-md text-primary font-semibold transition-colors" href="#">Search</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Drafting</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Case Analytics</a>
+</nav>
+<div class="h-6 w-px bg-outline-variant/30"></div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:bg-surface-container transition-colors p-2 rounded-full">notifications</span>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a senior law associate with a clean, minimalist aesthetic. The lighting is soft and corporate, set against a blurred background of a modern legal library with glass partitions and neutral tones, fitting the high-trust ASEAN legal environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDayOf6J0naVBl0_VPcjplSSIOT6zMThGGhVTRbKn6hqe-peHagt9Axt2oTXdYRSpkPZFYYsMIpxGy2yDth-qKOIuuGFe-hdCnVc_TnttC_0zFFDZRjFZhWIgIMjgBVvE5Yg2bYr-vcVcv6RBGxeUt81Ds9Vp1joyQOGnZDzeB72dllQ60Oy5IRdR1vxwttfA7WrI9GLEU5JDS2H4wT5Z9Q1daJrnMTVbT3ErS9vRI7GRROoLXhjFGZ">
+</div>
+</div>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden p-2 text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-16 pb-24 md:pb-12 min-h-screen">
+<!-- Hero Search Section -->
+<section class="relative py-xxl px-gutter max-w-container-max mx-auto overflow-hidden">
+<!-- Atmospheric Gradient Background -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-40 pointer-events-none">
+<div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-0 right-1/4 w-64 h-64 bg-secondary-container/20 rounded-full blur-[80px]"></div>
+</div>
+<div class="text-center mb-xl">
+<h2 class="font-headline-xl text-headline-xl mb-md text-primary tracking-tight">Intelligent Semantic Search</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Deep semantic understanding of Malaysian statutes, precedents, and regulatory frameworks.
+                </p>
+</div>
+<!-- Central Search UI -->
+<div class="max-w-4xl mx-auto">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-lg flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-headline-sm transition-colors group-focus-within:text-primary">search</span>
+</div>
+<input class="w-full h-16 pl-14 pr-32 bg-surface-container-lowest border border-outline-variant/50 rounded-xl shadow-sm font-body-md text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all outline-none" placeholder="Enter a legal concept or fact pattern..." type="text">
+<div class="absolute inset-y-0 right-2 flex items-center">
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md hover:bg-primary/90 active:scale-95 transition-all">
+                            Analyze
+                        </button>
+</div>
+</div>
+<!-- Example Queries -->
+<div class="mt-md flex flex-wrap justify-center items-center gap-md">
+<span class="font-label-sm text-outline">Try searching:</span>
+<button class="font-label-sm text-on-surface-variant hover:text-primary border-b border-dotted border-outline-variant hover:border-primary transition-all">'Duty of care in distressed companies'</button>
+<button class="font-label-sm text-on-surface-variant hover:text-primary border-b border-dotted border-outline-variant hover:border-primary transition-all">'Doctrine of frustration in tenancy'</button>
+</div>
+</div>
+</section>
+<!-- Filters & Navigation -->
+<section class="sticky top-16 z-40 bg-background/80 backdrop-blur-md border-b border-outline-variant/10 py-md px-gutter">
+<div class="max-w-container-max mx-auto flex flex-wrap items-center justify-between gap-md">
+<div class="flex items-center gap-sm overflow-x-auto pb-1 no-scrollbar">
+<button class="whitespace-nowrap px-md py-1.5 rounded-full bg-primary text-on-primary font-label-sm shadow-sm transition-all">All Results</button>
+<button class="whitespace-nowrap px-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm transition-all border border-outline-variant/10">Federal Court</button>
+<button class="whitespace-nowrap px-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm transition-all border border-outline-variant/10">Court of Appeal</button>
+<button class="whitespace-nowrap px-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm transition-all border border-outline-variant/10">High Court</button>
+<button class="whitespace-nowrap px-md py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm transition-all border border-outline-variant/10">Statutes</button>
+</div>
+<div class="flex items-center gap-md ml-auto">
+<span class="font-label-sm text-outline">Sort by: <span class="text-primary font-semibold">Relevance</span></span>
+<span class="material-symbols-outlined text-outline cursor-pointer">tune</span>
+</div>
+</div>
+</section>
+<!-- Search Results Grid -->
+<section class="max-w-container-max mx-auto px-gutter py-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Main Results Column -->
+<div class="lg:col-span-8 space-y-lg">
+<!-- Result Item 1 -->
+<article class="bg-surface-container-lowest p-lg rounded-xl legal-sheet hover:border-primary/20 transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex flex-wrap gap-sm items-center">
+<span class="bg-secondary-container/50 text-on-secondary-container px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase">FEDERAL COURT</span>
+<span class="text-outline text-label-sm">2023 • 5 MLJ 142</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="font-label-sm text-on-tertiary-container bg-tertiary-fixed/30 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+                                    98% Relevant
+                                </span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm group-hover:text-on-primary-container transition-colors">Tengku Dato' Ibrahim b. Tengku Salleh v. Sharin b. Mohd [2023]</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-3 mb-md">
+                            The court examined the extent of a director's fiduciary duty when a company faces imminent insolvency. In this instance, the "distressed" state of the entity shifted the primary duty from shareholders to the creditors...
+                        </p>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-md">
+<div class="flex items-center gap-md">
+<span class="flex items-center gap-1 text-on-primary-container bg-primary-fixed/30 px-2 py-1 rounded text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                    Verified Citation
+                                </span>
+<span class="text-outline text-label-sm">Subject: Corporate Law / Insolvency</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-outline hover:text-primary transition-all">bookmark</span>
+<span class="material-symbols-outlined text-outline hover:text-primary transition-all">share</span>
+</div>
+</div>
+</article>
+<!-- Result Item 2 -->
+<article class="bg-surface-container-lowest p-lg rounded-xl legal-sheet hover:border-primary/20 transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex flex-wrap gap-sm items-center">
+<span class="bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase">STATUTES</span>
+<span class="text-outline text-label-sm">Companies Act 2016</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="font-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full">
+                                    85% Match
+                                </span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm group-hover:text-on-primary-container transition-colors">Section 213 - Duties and Responsibilities of Directors</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-3 mb-md">
+                            A director of a company shall at all times exercise his powers in accordance with this Act, for a proper purpose and in good faith in the best interest of the company...
+                        </p>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-md">
+<div class="flex items-center gap-md">
+<span class="flex items-center gap-1 text-on-primary-container bg-primary-fixed/30 px-2 py-1 rounded text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                    Official Text
+                                </span>
+<span class="text-outline text-label-sm">Tags: Directors, Liability</span>
+</div>
+<div class="flex items-center gap-md text-outline">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all">bookmark</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all">content_copy</span>
+</div>
+</div>
+</article>
+<!-- Result Item 3 -->
+<article class="bg-surface-container-lowest p-lg rounded-xl legal-sheet hover:border-primary/20 transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex flex-wrap gap-sm items-center">
+<span class="bg-secondary-container/50 text-on-secondary-container px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase">COURT OF APPEAL</span>
+<span class="text-outline text-label-sm">2021 • 2 CLJ 550</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="font-label-sm text-on-tertiary-container bg-tertiary-fixed/30 px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+                                    72% Relevant
+                                </span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm group-hover:text-on-primary-container transition-colors">Maybank Islamic Bhd v. Mukhriz Mohd [2021]</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-3 mb-md">
+                            Regarding the application of the 'business judgment rule' under Section 214 of the Companies Act 2016 in contexts where the company is undergoing severe capital erosion...
+                        </p>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-md">
+<div class="flex items-center gap-md">
+<span class="flex items-center gap-1 text-on-primary-container bg-primary-fixed/30 px-2 py-1 rounded text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                    Verified Citation
+                                </span>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-outline hover:text-primary transition-all">bookmark</span>
+<span class="material-symbols-outlined text-outline hover:text-primary transition-all">share</span>
+</div>
+</div>
+</article>
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-md py-lg">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<span class="font-label-md text-primary">Page 1 of 12</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Secondary Intelligence Column (Bento Cards) -->
+<aside class="lg:col-span-4 space-y-lg">
+<!-- Quick Stats Bento -->
+<div class="bg-primary-container text-on-primary-container p-lg rounded-xl shadow-sm">
+<h4 class="font-label-md uppercase tracking-widest text-on-primary-container/70 mb-md">Research Insights</h4>
+<div class="grid grid-cols-2 gap-md">
+<div class="bg-surface-container-lowest/10 p-md rounded-lg">
+<span class="block text-headline-md font-bold">142</span>
+<span class="text-label-sm text-on-primary-container/80">Matching Cases</span>
+</div>
+<div class="bg-surface-container-lowest/10 p-md rounded-lg">
+<span class="block text-headline-md font-bold">12</span>
+<span class="text-label-sm text-on-primary-container/80">Statutes</span>
+</div>
+</div>
+<div class="mt-md p-md bg-secondary-container/20 rounded-lg">
+<p class="text-body-sm italic">"The search trends suggest a high judicial focus on Section 213 duties in the last 18 months."</p>
+</div>
+</div>
+<!-- Knowledge Graph Preview -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant/20 shadow-sm">
+<h4 class="font-label-md text-primary mb-md">Related Concepts</h4>
+<div class="flex flex-wrap gap-xs">
+<span class="px-3 py-1 bg-surface-container-high rounded text-label-sm text-on-surface hover:bg-primary hover:text-on-primary cursor-pointer transition-all">Piercing the Corporate Veil</span>
+<span class="px-3 py-1 bg-surface-container-high rounded text-label-sm text-on-surface hover:bg-primary hover:text-on-primary cursor-pointer transition-all">Insolvency</span>
+<span class="px-3 py-1 bg-surface-container-high rounded text-label-sm text-on-surface hover:bg-primary hover:text-on-primary cursor-pointer transition-all">Ultra Vires</span>
+<span class="px-3 py-1 bg-surface-container-high rounded text-label-sm text-on-surface hover:bg-primary hover:text-on-primary cursor-pointer transition-all">Locus Standi</span>
+<span class="px-3 py-1 bg-surface-container-high rounded text-label-sm text-on-surface hover:bg-primary hover:text-on-primary cursor-pointer transition-all">Equitable Lien</span>
+</div>
+</div>
+<!-- AI Summary Card -->
+<div class="bg-surface p-lg rounded-xl border border-outline-variant/30 shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-lg opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-xxl" style="font-size: 64px;">auto_awesome</span>
+</div>
+<h4 class="font-label-md text-primary mb-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+                            Smart Summary
+                        </h4>
+<p class="text-body-sm text-on-surface-variant leading-relaxed">
+                            Recent case law emphasizes that "distressed" companies require directors to prioritize creditor interests above shareholders as the company nears the 'twilight zone' of insolvency.
+                        </p>
+<button class="mt-md w-full py-2 bg-primary text-on-primary font-label-md rounded hover:opacity-90 transition-all">Generate Full Report</button>
+</div>
+</aside></div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface border-t border-outline-variant/10 shadow-lg flex justify-around items-center h-20 px-4 pb-safe"><div onclick="window.location.href='{{DATA:SCREEN:SCREEN_6}}'" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 active:scale-95 transition-transform duration-200 cursor-pointer"><span class="material-symbols-outlined">dashboard</span><span class="font-label-sm text-label-sm">Home</span></div><div onclick="window.location.href='{{DATA:SCREEN:SCREEN_4}}'" class="flex flex-col items-center justify-center text-primary bg-secondary-container/30 rounded-xl px-3 py-1 active:scale-95 transition-transform duration-200 cursor-pointer"><span class="material-symbols-outlined">search</span><span class="font-label-sm text-label-sm">Search</span></div><div onclick="window.location.href='{{DATA:SCREEN:SCREEN_5}}'" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 active:scale-95 transition-transform duration-200 cursor-pointer"><span class="material-symbols-outlined">description</span><span class="font-label-sm text-label-sm">Templates</span></div><div onclick="window.location.href='{{DATA:SCREEN:SCREEN_2}}'" class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 active:scale-95 transition-transform duration-200 cursor-pointer"><span class="material-symbols-outlined">compare_arrows</span><span class="font-label-sm text-label-sm">Matrix</span></div><div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 active:scale-95 transition-transform duration-200 cursor-pointer"><span class="material-symbols-outlined">account_circle</span><span class="font-label-sm text-label-sm">Profile</span></div></nav>
+<!-- Floating Action Button (FAB) - Suppression Logic: Shown on Search/Home as per guidelines -->
+<button class="fixed bottom-24 right-gutter md:bottom-8 md:right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-xl flex items-center justify-center active:scale-90 transition-all hover:shadow-2xl z-40 group">
+<span class="material-symbols-outlined">add</span>
+<span class="absolute right-full mr-4 bg-primary-container text-on-primary-container px-3 py-1.5 rounded-lg text-label-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">New Research Project</span>
+</button>
+<script>
+        // Micro-interaction for search input focus
+        const searchInput = document.querySelector('input[type="text"]');
+        const heroSection = document.querySelector('.relative.py-xxl');
+        
+        searchInput.addEventListener('focus', () => {
+            heroSection.classList.add('scale-[1.01]');
+            heroSection.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
+
+        searchInput.addEventListener('blur', () => {
+            heroSection.classList.remove('scale-[1.01]');
+        });
+
+        // Filter chip selection logic
+        const filterChips = document.querySelectorAll('.flex.items-center.gap-sm button');
+        filterChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                filterChips.forEach(c => {
+                    c.classList.remove('bg-primary', 'text-on-primary');
+                    c.classList.add('bg-surface-container', 'text-on-surface-variant');
+                });
+                chip.classList.remove('bg-surface-container', 'text-on-surface-variant');
+                chip.classList.add('bg-primary', 'text-on-primary');
+            });
+        });
+    </script>
+
+
+</body></html>
