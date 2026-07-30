@@ -115,3 +115,37 @@ function findRelevantSections(value){const query=value.toLowerCase();const terms
 function renderCaseMatcher(){const host=document.createElement('section');host.className='case-matcher';host.innerHTML=`<div class="case-matcher-head"><div><p class="eyebrow">CASE-TO-LAW MATCHER</p><h2>Find the most relevant section.</h2><p>Enter case or lawsuit keywords. This local demo compares them with a fictional, versioned section index.</p></div><span class="matcher-badge">LOCAL AI DEMO</span></div><div class="matcher-input"><textarea id="caseMatcherInput" aria-label="Case or lawsuit keywords" placeholder="Example: employee dismissal without notice and unpaid wages"></textarea><button id="runCaseMatcher" class="primary">Compare with sections <span>→</span></button></div><div class="matcher-examples"><span>Try a demo:</span><button data-case-example="employee dismissal without notice and unpaid wages">Employment termination</button><button data-case-example="cross-border transfer of customer personal data to Singapore">Cross-border data transfer</button><button data-case-example="director conflict of interest company board decision">Director duties</button></div><div id="caseMatcherResults" class="matcher-results"><p class="subtle">No comparison yet. Add keywords to see the best-matching local section records.</p></div><p class="matcher-disclaimer">Similarity is an illustrative keyword score, not a legal conclusion or a promise of accuracy. Check the official, current law and obtain qualified legal advice before acting.</p></section>`;$('#search').append(host);const input=$('#caseMatcherInput');function runMatcher(){const value=input.value.trim();const results=value?findRelevantSections(value):[];$('#caseMatcherResults').innerHTML=results.length?results.map((record,index)=>`<article class="section-match"><span class="match-score ${record.score>79?'strong':'moderate'}">${record.score}%<small>${index===0?'Most relevant':'Similarity'}</small></span><div><p class="result-meta"><span>${record.jurisdiction.toUpperCase()}</span><span class="source-pill">LOCAL DEMO DATABASE</span></p><h3>${record.section}</h3><p><b>${record.law}</b> · ${record.summary}</p><small>Matched: ${record.matches.join(', ')} · ${record.citation}</small></div><button class="source-link" data-matcher-source="${record.id}">Open record ↗</button></article>`).join(''):`<article class="matcher-empty"><b>No direct keyword match</b><p>Try more specific facts, such as the jurisdiction, legal topic, action, or issue.</p></article>`;$$('[data-matcher-source]').forEach(button=>button.onclick=()=>{const record=caseSectionDatabase.find(item=>item.id===button.dataset.matcherSource);openLocalSource({id:record.id,title:record.section,type:'SECTION MATCH',jurisdiction:record.jurisdiction,status:'Local demo record',updated:'24 July 2026',citation:record.citation,extract:`${record.summary} Matched keywords: ${record.keywords.join(', ')}.`})})}$('#runCaseMatcher').onclick=runMatcher;$$('[data-case-example]').forEach(button=>button.onclick=()=>{input.value=button.dataset.caseExample;runMatcher()})}
 renderCaseMatcher();
 renderTemplates();renderResults();renderWorkspace();renderNotifications();goPage(location.hash.slice(1)||'home');
+const legalUpload = document.getElementById("legalDocumentUpload");
+const analysisResult = document.getElementById("documentAnalysisResult");
+
+if (legalUpload) {
+
+  legalUpload.addEventListener("change", function(){
+
+    const file = this.files[0];
+
+    if(file){
+
+      analysisResult.innerHTML = `
+        <div class="analysis-card">
+          <h3>Analysing document...</h3>
+          <p>
+            File: <b>${file.name}</b>
+          </p>
+          <p>
+            Searching related:
+          </p>
+          <ul>
+            <li>Companies Act 2016</li>
+            <li>Personal Data Protection Act 2010</li>
+            <li>Contract Act 1950</li>
+            <li>Relevant Malaysian case law</li>
+          </ul>
+        </div>
+      `;
+
+    }
+
+  });
+
+}

@@ -55,7 +55,24 @@
       </section>
 
       <section id="search" class="page">
-        <div class="search-hero"><p class="eyebrow">INTELLIGENT LEGAL RESEARCH</p><h1>Find the law. Verify the source.</h1><p>Search across curated legislation, cases, regulatory guidance and trusted legal commentary.</p><form id="legalSearchForm" class="large-search"><span>⌕</span><input id="legalSearchInput" value="data protection obligations" aria-label="Search legal sources"/><button class="primary">Search</button></form><div class="quick-searches"><span>Popular:</span><button>Employment Act</button><button>PDPA</button><button>Company incorporation</button></div></div>
+        <div class="search-hero"><p class="eyebrow">INTELLIGENT LEGAL RESEARCH</p><h1>Find the law. Verify the source.</h1><p>Search across curated legislation, cases, regulatory guidance and trusted legal commentary.</p><form id="legalSearchForm" class="large-search"><span>⌕</span><input id="legalSearchInput" value="data protection obligations" aria-label="Search legal sources"/><button class="primary">Search</button></form><div class="document-upload-search">
+          <div>
+            <h3>Upload a legal document</h3>
+            <p>Upload an agreement, contract, judgment or PDF to find related Acts, cases and regulations.</p>
+          </div>
+
+          <label class="primary upload-btn">
+            Upload document
+            <input 
+              id="legalDocumentUpload"
+              type="file"
+              accept=".pdf,.doc,.docx,.txt"
+              hidden
+            />
+          </label>
+        </div>
+
+        <div id="documentAnalysisResult"></div><div class="quick-searches"><span>Popular:</span><button>Employment Act</button><button>PDPA</button><button>Company incorporation</button></div></div>
         <div id="searchResults" class="results-layout"><aside class="filters"><b>FILTER RESULTS</b><hr><label>Jurisdiction</label><button class="filter-choice selected">Malaysia <span>46</span></button><button class="filter-choice">Singapore <span>38</span></button><button class="filter-choice">Indonesia <span>22</span></button><hr><label>Source type</label><button class="filter-choice">Legislation <span>31</span></button><button class="filter-choice">Case law <span>18</span></button><button class="filter-choice">Guidance <span>15</span></button></aside><div class="results"><div class="results-head"><p><b>46 results</b> for “data protection obligations”</p><select><option>Most relevant</option><option>Newest first</option></select></div><div id="resultList"></div></div></div>
       </section>
 

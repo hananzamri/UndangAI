@@ -5,3 +5,39 @@
     object-fit: contain;
     flex-shrink: 0;
 }
+.document-upload-search{
+  margin-top:24px;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  background:#fff;
+  border:1px dashed #c6c6cd;
+  border-radius:12px;
+}
+
+.document-upload-search h3{
+  margin:0 0 6px;
+}
+
+.document-upload-search p{
+  margin:0;
+  color:#666;
+}
+
+.upload-btn{
+  cursor:pointer;
+}
+
+.analysis-card{
+  margin-top:20px;
+  padding:20px;
+  background:#f7f9fb;
+  border-radius:12px;
+  border:1px solid #e4e6eb;
+}
+
+.analysis-card ul{
+  padding-left:20px;
+}
